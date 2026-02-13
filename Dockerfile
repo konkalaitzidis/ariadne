@@ -2,20 +2,18 @@ FROM continuumio/miniconda3
 
 WORKDIR /app
 
-# Copy dependency file
+# 1. Copy the environment file
 COPY environment.yml .
 
-# Create the environment
+# 2. Create the conda environment (No local pip install yet)
 RUN conda env create -f environment.yml && conda clean -afy
 
-# Copy the rest of the project
+# 3. NOW copy the rest of your project (including setup.py)
 COPY . .
 
-# Ensure the environment is used for all subsequent commands
+# 4. Use the specific conda python to install your project
 SHELL ["conda", "run", "-n", "ariadne", "/bin/bash", "-c"]
-
-# Install the ariadne package in editable mode
 RUN pip install -e .
 
-# Run the training script by default
+# 5. Default command
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "ariadne", "python", "scripts/train.py"]
