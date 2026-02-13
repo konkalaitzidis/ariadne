@@ -19,3 +19,8 @@ Thumbs.db
 # Data and logs (Optional but recommended)
 *.log
 data/
+
+# Large files
+*.sif
+*.pth
+*.ext

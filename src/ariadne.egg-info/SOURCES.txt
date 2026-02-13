@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+src/ariadne.egg-info/PKG-INFO
+src/ariadne.egg-info/SOURCES.txt
+src/ariadne.egg-info/dependency_links.txt
+src/ariadne.egg-info/requires.txt
+src/ariadne.egg-info/top_level.txt
