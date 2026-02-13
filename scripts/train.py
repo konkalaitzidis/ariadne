@@ -1,4 +1,4 @@
-from src.utils import greet
+from src.ariadne.utils import greet
 
 if __name__ == "__main__":
     print(greet())
